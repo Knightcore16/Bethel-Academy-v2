@@ -4,6 +4,7 @@ $(document).ready(function(){
       items: 1,
       loop: true,
       autoplay: true,
+      mouseDrag: false,
       autoplayTimeout: 5000
     });
   });

@@ -516,15 +516,20 @@ section {
 position: relative;
   }
 
+  .offering-sub .offering-img{
+    /* position: relative; */
+
+  }
+
 .offering-sub .offering-img img{
     border-radius: 10px;
-    position: relative;
+    /* position: relative; */
     display: block;
     overflow: hidden;
     max-width: 350px;
   }
 
-  .offering-sub .offering-img::after{
+  .offering-sub::after{
     background-color: rgba(0,0,0,.5);
     bottom: 0;
     content: "";
