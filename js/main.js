@@ -1,33 +1,133 @@
-// Initialize the Owl Carousel
+// Initialize the Owl Carousel for Hero
 $(document).ready(function(){
     $('.hero-carousel').owlCarousel({
       items: 1,
       loop: true,
       autoplay: true,
       mouseDrag: false,
+      dots:false,
       autoplayTimeout: 5000
     });
   });
 
-  $(document).ready(function() {
-    $('.redirect-carousel').owlCarousel({
-      items: 3,
+  // Initialize the Owl Carousel for news
+ $(document).ready(function() {
+
+  "use strict";
+
+  var fullHeight = function() {
+    $('.js-fullheight').css('height', $(window).height());
+    $(window).resize(function(){
+      $('.js-fullheight').css('height', $(window).height());
+    });
+  };
+
+  fullHeight();
+
+  var carousel = function() {
+    $('.featured-carousel').owlCarousel({
+      loop: true,
+      autoplay: true,
+      margin: 30,
+      animateOut: 'fadeOut',
+      animateIn: 'fadeIn',
       nav: true,
-      dots: true,
-      mouseDrag: false,
-      responsive: {
-        0: {
+      autoplayHoverPause: false,
+      items: 1,
+      navText: ["<span class='icon-arrow-left'></span>", "<span class='icon-arrow-right'></span>"],
+      responsive:{
+        0:{
           items: 1
         },
-        768: {
+        600:{
           items: 2
         },
-        992: {
+        1000:{
           items: 3
         }
       }
     });
+  };
+
+  carousel();
+
+});
+
+// Initialize the Owl Carousel for Events
+var Lowl = $("#events");
+
+Lowl.owlCarousel({
+  items: 1,
+  responsive: {
+    0: {
+      items: 1
+    },
+    768: {
+      items: 3
+    },
+    979: {
+      items: 2
+    },
+    1199: {
+      items: 3
+    }
+  },
+  loop: true,
+  margin: 0,
+  rtl: true,
+  autoplay: false,
+  autoplayTimeout: 5000,
+  autoplayHoverPause: true,
+  smartSpeed: 800,
+  nav: false,
+  dots:true,
+  navText: [
+    "<span class='icon-arrow-left'></span>",
+    "<span class='icon-arrow-right'></span>"
+  ],
+  animateOut: 'fadeOut',
+  animateIn: 'fadeIn'
+});
+
+$(".prev").click(function() {
+  Lowl.trigger('next.owl.carousel');
+});
+
+$(".next").click(function() {
+  Lowl.trigger('prev.owl.carousel');
+});
+
+
+const testimonialCards = document.querySelectorAll('.card-header');
+const testimonialImage = document.querySelector('.circle-img img');
+
+testimonialCards.forEach(card => {
+  card.addEventListener('click', () => {
+    if (card.getAttribute('aria-expanded') === 'true') {
+      testimonialImage.style.marginBottom = '0px';
+    } else {
+      testimonialImage.style.marginBottom = '70px';
+    }
   });
+});
+
+function adjustImageMargin() {
+  if (window.innerWidth >= 768) {
+    testimonialImage.style.marginBottom = '200px';
+    testimonialImage.style.marginTop = '-25px';
+  } else {
+    testimonialImage.style.marginBottom = '0px';
+    testimonialImage.style.marginTop = '0px';
+
+  }
+}
+
+testimonialCards.forEach(card => {
+  card.addEventListener('click', adjustImageMargin);
+});
+
+window.addEventListener('resize', adjustImageMargin);
+
 
   (function() {
     "use strict";
