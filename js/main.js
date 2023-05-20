@@ -98,35 +98,96 @@ $(".next").click(function() {
 });
 
 
-const testimonialCards = document.querySelectorAll('.card-header');
-const testimonialImage = document.querySelector('.circle-img img');
+// const testimonialCards = document.querySelectorAll('.card-header');
+// const testimonialImage = document.querySelector('.circle-img img');
 
-testimonialCards.forEach(card => {
-  card.addEventListener('click', () => {
-    if (card.getAttribute('aria-expanded') === 'true') {
-      testimonialImage.style.marginBottom = '0px';
+// testimonialCards.forEach(card => {
+//   card.addEventListener('click', () => {
+//     if (card.getAttribute('aria-expanded') === 'true') {
+//       testimonialImage.style.marginBottom = '0px';
+//     } else {
+//       testimonialImage.style.marginBottom = '70px';
+//       testimonialImage.style.width = '70%'
+//     }
+//   });
+// });
+
+// function adjustImageMargin() {
+//   if (window.innerWidth >= 768) {
+//     testimonialImage.style.marginBottom = '200px';
+//     testimonialImage.style.marginTop = '-25px';
+//     testimonialImage.style.width = '105%'
+//   } else {
+//     testimonialImage.style.marginBottom = '400px';
+//     testimonialImage.style.marginTop = '-800px';
+
+//   }
+// }
+
+// testimonialCards.forEach(card => {
+//   card.addEventListener('click', adjustImageMargin);
+// });
+
+// window.addEventListener('resize', adjustImageMargin);
+
+let resizeTimeout;
+
+function handleResize() {
+  clearTimeout(resizeTimeout);
+
+  resizeTimeout = setTimeout(() => {
+    const testimonialCards = document.querySelectorAll('.card-header');
+    const testimonialImage = document.querySelector('.circle-img img');
+
+    // Check if the window width is less than or equal to the tablet breakpoint
+    if (window.innerWidth <= 768) {
+      // Check if the device is in landscape orientation
+      if (window.matchMedia("(orientation: landscape)").matches) {
+        testimonialCards.forEach(card => {
+          card.addEventListener('click', () => {
+            if (card.getAttribute('aria-expanded') === 'true') {
+              testimonialImage.style.marginBottom = '0px';
+            } else {
+              testimonialImage.style.marginBottom = '40px';
+              testimonialImage.style.width = '50%';
+            }
+          });
+        });
+      } else {
+        // Device is in portrait orientation
+        testimonialCards.forEach(card => {
+          card.addEventListener('click', () => {
+            if (card.getAttribute('aria-expanded') === 'true') {
+              testimonialImage.style.marginBottom = '0px';
+            } else {
+            testimonialImage.style.marginBottom = '60px';
+            testimonialImage.style.marginTop = '-20px';
+            testimonialImage.style.width = '105%';
+            }
+          });
+        });
+      }
     } else {
-      testimonialImage.style.marginBottom = '70px';
+      // Reset the styles for larger screens
+      testimonialCards.forEach(card => {
+        card.addEventListener('click', () => {
+          if (card.getAttribute('aria-expanded') === 'true') {
+            testimonialImage.style.marginBottom = '0px';
+          } else {
+            testimonialImage.style.marginBottom = '70px';
+            testimonialImage.style.width = '70%';
+          }
+        });
+      });
     }
-  });
-});
-
-function adjustImageMargin() {
-  if (window.innerWidth >= 768) {
-    testimonialImage.style.marginBottom = '200px';
-    testimonialImage.style.marginTop = '-25px';
-  } else {
-    testimonialImage.style.marginBottom = '0px';
-    testimonialImage.style.marginTop = '0px';
-
-  }
+  }, 150); // Adjust the debounce delay as needed
 }
 
-testimonialCards.forEach(card => {
-  card.addEventListener('click', adjustImageMargin);
-});
+// Execute the function initially
+handleResize();
 
-window.addEventListener('resize', adjustImageMargin);
+// Add event listener for window resize
+window.addEventListener('resize', handleResize);
 
 
   (function() {

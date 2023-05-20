@@ -168,9 +168,10 @@ img {
   vertical-align: middle;
   border-style: none; }
 
-svg {
+/* svg {
   overflow: hidden;
-  vertical-align: middle; }
+  vertical-align: middle;
+  } */
 
 table {
   border-collapse: collapse; }

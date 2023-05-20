@@ -601,6 +601,10 @@ div.bkg{
   margin-bottom: 0.625rem;
 }
 
+.event-list .event-item .event-schedule svg {
+  display: block;
+}
+
 .event-list .event-item .event-schedule .event-icon {
   stroke-width: 1px;
   width: 1.125rem;
@@ -648,46 +652,6 @@ div.bkg{
   font-weight: 300;
 }
 
-.event-list .event-item .event-participants {
-  padding: 0;
-  margin: 0;
-}
-
-.event-list .event-item .event-participants .event-user {
-  width: 48px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  border: 2px solid #ffffff;
-}
-
-.event-list .event-item .event-participants .event-user .event-user-inital {
-  font-size: 13px;
-  line-height: 100%;
-}
-
-.event-list .event-item .event-participants {
-  display: flex !important;
-}
-
-.event-list .event-item .event-participants .event-user .event-user-pic {
-  width: 100%;
-  border-radius: 50%;
-}
-
-.event-list .event-item .event-participants li + li {
-  margin-left: -10px;
-}
-
-.event-list .event-item .event-participants {
-  flex-direction: row !important;
-}
-.event-list .event-item .event-participants {
-  padding: 0;
-  margin: 0;
-}
 
 .bg-soft-primary {
   background-color: #dce3fa;
@@ -728,7 +692,7 @@ div.bkg{
       box-shadow: -2px 1px 5px #bdbdbd;
       top: calc(40% - 20px);
       cursor: pointer;
-      z-index: 999;
+      /* z-index: 999; */
   }
   .prev.navigate {
       left: -35px;
@@ -773,32 +737,6 @@ h2.testimonials-title::after {
 	bottom: -10px;
 }
 
-.circle-img img{
-  width: 90%;
-  margin-left: 100px;
-}
-
-@media only screen and (max-width:768px) {
- .circle-img{
-  display: none;
- }
-}
-
-@media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
-  and (orientation: portrait){
-    .circle-img{
-      display: block;
-     }
-
-     .circle-img img{
-      width: 105%;
-      margin-left: 20px;
-      margin-top: 100px;
-     }
-  }
-
  .height{
   height: 100vh;
  }
@@ -836,3 +774,138 @@ h2.testimonials-title::after {
   margin-top: -19px;
  }
 
+    /*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+footer{
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: #02132ee6;
+}
+footer .content{
+  max-width: 1350px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+footer .content p,a{
+  color: #fff;
+}
+footer .content .box{
+  width: 33%;
+  transition: all 0.4s ease;
+}
+
+.footer-text{
+  color: #fff;
+}
+
+footer .content .topic{
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 16px;
+}
+footer .content p{
+  text-align: justify;
+}
+footer .content .lower .topic{
+  margin: 24px 0 5px 0;
+}
+footer .content .lower i{
+  padding-right: 16px;
+}
+footer .content .middle{
+  padding-left: 80px;
+}
+footer .content .middle a{
+  line-height: 32px;
+}
+footer .content .right input[type="text"]{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  color: #d9d9d9;
+  background: #000;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 17px;
+  border: 2px solid #222222;
+}
+footer .content .right input[type="submit"]{
+  height: 42px;
+  width: 100%;
+  font-size: 18px;
+  color: #d9d9d9;
+  background: #eb2f06;
+  outline: none;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 12px;
+  border: 2px solid #eb2f06;
+  transition: all 0.3s ease-in-out;
+}
+.content .right input[type="submit"]:hover{
+  background: none;
+  color:  #eb2f06;
+}
+footer .content .media-icons a{
+  font-size: 16px;
+  height: 45px;
+  width: 45px;
+  display: inline-block;
+  text-align: center;
+  line-height: 43px;
+  border-radius: 5px;
+  border: 2px solid #222222;
+  margin: 30px 5px 0 0;
+  transition: all 0.3s ease;
+}
+.content .media-icons a:hover{
+  border-color: #eb2f06;
+}
+footer .bottom{
+  width: 100%;
+  text-align: right;
+  color: #d9d9d9;
+  padding: 0 40px 5px 0;
+}
+footer .bottom a{
+  color: #eb2f06;
+}
+footer a{
+  transition: all 0.3s ease;
+}
+footer a:hover{
+  color: #eb2f06;
+}
+@media (max-width:1100px) {
+  footer .content .middle{
+    padding-left: 50px;
+  }
+}
+@media (max-width:950px){
+  footer .content .box{
+    width: 50%;
+  }
+  .content .right{
+    margin-top: 40px;
+  }
+}
+@media (max-width:560px){
+  footer{
+    position: relative;
+  }
+  footer .content .box{
+    width: 100%;
+    margin-top: 30px;
+  }
+  footer .content .middle{
+    padding-left: 0;
+  }
+}
