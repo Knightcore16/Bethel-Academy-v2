@@ -107,7 +107,7 @@
   />
   <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/gdarkbox/3.2.0/css/gdarkbox.min.css"
     integrity="sha512-T+KoG3fbDoSnlgEXFQqwcTC9AdkFIxhBlmoaFqYaIjq2ShhNwNao9AKaLUPMfwiBPL0ScxAtc+UYbHAgvd+sjQ=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
@@ -163,55 +163,77 @@
       border-radius: 5px;
       margin-top: 50px;
     }
-  </style>
+
+    .footer-logo{
+      max-height: 130px;
+    }
+
+    .divider{
+      display: block;
+    width: 90%;
+    height: 6px;
+    background: rgba(26,25,25,.1);
+    margin: 30px auto 10px;
+    }
+
+    .links-header{
+      display: inline;
+      border-bottom: 3px solid #f9dd94;
+    }
+
+    .all-links{
+      margin-top: 20px;
+    }
+
+  </style> 
 </head>
 <body>
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top" style="background: rgba(40, 58, 90, 0.9);">
-        <div class="container d-flex align-items-center">
-          <!-- <h1 class="logo me-auto"><a href="index.html">Arsha</a></h1> -->
-          <!-- Uncomment below if you prefer to use an image logo -->
-          <a href="index.html" class="logo me-auto"
-            ><img src="img\pics\school-logo.png" alt="" class="img-fluid"
-          /></a>
-  
-          <nav id="navbar" class="navbar">
-            <ul>
-              <li><a class="nav-link scrollto " href="index.html">Home</a></li>
-              <li><a class="nav-link scrollto" href="#about">About</a></li>
-              <li class="dropdown active">
-                <a href="#"
-                  ><span>Admissions</span> <i class="bi bi-chevron-down"></i
-                ></a>
-                <ul>
-                  <li><a href="admission.html">Apply</a></li>
-                  <li><a href="admission_policy.html">Admission Policy</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a href="#"
-                  ><span>Drop Down</span> <i class="bi bi-chevron-down"></i
-                ></a>
-                <ul>
-                  <li><a href="#">Drop Down 1</a></li>
-                  <li><a href="#">Drop Down 2</a></li>
-                  <li><a href="#">Drop Down 3</a></li>
-                  <li><a href="#">Drop Down 4</a></li>
-                </ul>
-              </li>
-              <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-              <li>
-                <a class="getstarted scrollto" href="#about">Get Started</a>
-              </li>
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-          </nav>
-          <!-- .navbar -->
-        </div>
-      </header>
+      <div class="container d-flex align-items-center">
+        <!-- <h1 class="logo me-auto"><a href="index.html">Arsha</a></h1> -->
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="index.html" class="logo me-auto"
+          ><img src="img\pics\school-logo.png" alt="school-logo" class="img-fluid"
+        /></a>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+            <li><a class="nav-link scrollto" href="about.html">About Us</a></li>
+            <li class="dropdown">
+              <a href="#"
+                ><span>Admissions</span> <i class="bi bi-chevron-down" style="color: yellow;"></i
+              ></a>
+              <ul>
+                <li><a href="admission.html">Apply</a></li>
+                <li><a href="admission_policy.html">Admission Policy</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#"
+                ><span>Drop Down</span> <i class="bi bi-chevron-down" style="color: yellow;"></i
+              ></a>
+              <ul>
+                <li><a href="#">Drop Down 1</a></li>
+                <li><a href="#">Drop Down 2</a></li>
+                <li><a href="#">Drop Down 3</a></li>
+                <li><a href="#">Drop Down 4</a></li>
+              </ul>
+            </li>
+            <li><a class="nav-link scrollto" href="#contact">Contact Us</a></li>
+            <!-- <li>
+              <a class="getstarted scrollto" href="#about">Get Started</a>
+            </li> -->
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
       <!-- End Header -->
 
-
+<!-- Admission Policy -->
   <div class="container admission-container">
     <h1>Admission Policy</h1>
     
@@ -263,6 +285,63 @@
       </p>
     </div>
   </div>
+<!-- Admission Policy End -->
+
+<div class="divider"></div>
+
+<!-- Footer -->
+<footer class="bg-white text-dark" style="background: #02132ee6;">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-3 text-center mb-4 mb-md-0">
+        <img src="img\pics\school-logo.png" alt="School Logo" class="footer-logo">
+        <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="col-md-3 text-center mb-4 mb-md-0">
+        <h5 class="mb-4 links-header">Quick Links</h5>
+        <ul class="list-unstyled all-links">
+          <li class="mb-3"><a href="" class="text-dark">Home</a></li>
+          <li class="mb-3"><a href="/about" class="text-dark">About Us</a></li>
+          <li class="mb-3"><a href="/academics" class="text-dark">Academics</a></li>
+          <li class="mb-3"><a href="/admissions" class="text-dark">Admissions</a></li>
+          <li class="mb-3"><a href="/contact" class="text-dark">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 text-center mb-4 mb-md-0">
+        <h5 class="mb-4 links-header">Connect with Us</h5>
+        <ul class="list-unstyled all-links">
+          <li class="mb-4"><a href="https://facebook.com/school" class="text-dark"><i class="fab fa-facebook me-2" style="font-size: 20px;"></i>Facebook</a></li>
+          <li class="mb-4"><a href="https://instagram.com/school" class="text-dark"><i class="fab fa-instagram me-2" style="font-size: 20px;"></i>Instagram</a></li>
+          <li class="mb-4"><a href="https://twitter.com/school" class="text-dark"><i class="fab fa-twitter me-2" style="font-size: 20px;"></i>Twitter</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 text-center">
+        <h5 class="mb-4 links-header">Contact Information</h5>
+        <ul class="list-unstyled all-links">
+          <li class="mb-3"><i class="fas fa-map-marker-alt me-2" style="font-size: 20px;"></i> 123 School Street, City, State, ZIP</li>
+          <li class="mb-3"><i class="fas fa-phone-alt me-2" style="font-size: 20px;"></i>+233 20 000 0000</li> 
+          <li class="mb-3"><i class="fas fa-envelope me-2" style="font-size: 20px;"></i> info@schoolwebsite.com</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="bg-white py-3" style="background: #02132ee6;">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-center text-center">
+          <p class="mb-1 ">&copy; 2023 Bethel Methodist Academy. All rights reserved.</p>
+          <!-- <a href="/privacy-policy" style="color: gray;">Privacy Policy</a> -->
+        </div>
+        <div>
+          <p class="mb-1">Designed by HorizonDev</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
 
 
   
@@ -287,7 +366,7 @@
       referrerpolicy="no-referrer"
     ></script>
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"
+      src="https://cdnjs.cloudflare.com/ajax/libs/gdarkbox/3.2.0/js/gdarkbox.min.js"
       integrity="sha512-S/H9RQ6govCzeA7F9D0m8NGfsGf0/HjJEiLEfWGaMCjFzavo+DkRbYtZLSO+X6cZsIKQ6JvV/7Y9YMaYnSGnAA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
