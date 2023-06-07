@@ -23,6 +23,45 @@ html {
 
   
 /*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #37517e;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #37517e;
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1s linear infinite;
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+  
+/*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
 .back-to-top {
@@ -778,7 +817,7 @@ h2.testimonials-title::after {
     /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-
+/* 
 footer{
   width: 100%;
   bottom: 0;
@@ -927,4 +966,26 @@ i {
 
 .form-control.shadow-0:focus {
   box-shadow: none;
+} */
+
+
+.footer-logo{
+  max-height: 130px;
+}
+
+.divider{
+  display: block;
+width: 90%;
+height: 6px;
+background: rgba(26,25,25,.1);
+margin: 30px auto 10px;
+}
+
+.links-header{
+  display: inline;
+  border-bottom: 3px solid #f9dd94;
+}
+
+.all-links{
+  margin-top: 20px;
 }

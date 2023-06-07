@@ -340,6 +340,20 @@ window.addEventListener('resize', handleResize);
       }
     });
   
+/**
+   * Preloader
+   */
+let preloader = document.querySelector('#preloader');
+
+if (preloader) {
+  // Add a delay of 2 seconds before removing the preloader
+  setTimeout(() => {
+    preloader.remove();
+  }, 3000);
+}
 
   
   })()
+
+   
+  
